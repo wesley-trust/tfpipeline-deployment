@@ -11,12 +11,21 @@ resource "azuredevops_build_definition" "tfmodule-resource_group" {
     service_connection_id = var.service_connection_id
   }
 
+  variable {
+    name  = "Service"
+    value = "ModuleServices"
+  }
+
+  variable {
+    name  = "Environment"
+    value = terraform.workspace
+  }
+
   ci_trigger {
     use_yaml = true
   }
 
-  variable {
-    Environment = terraform.workspace
-    Service     = "ModuleServices"
+  pull_request_trigger {
+    use_yaml = true
   }
 }
