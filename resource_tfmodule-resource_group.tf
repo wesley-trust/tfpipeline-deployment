@@ -7,7 +7,7 @@ resource "azuredevops_build_definition" "tfmodule-resource_group" {
     repo_id               = "wesley-trust/tfmodule-resource_group"
     repo_type             = var.repo_type
     yml_path              = var.yml_path
-    branch_name           = var.pipeine_branch
+    branch_name           = var.pipeline_branch
     service_connection_id = var.service_connection_id
   }
 
