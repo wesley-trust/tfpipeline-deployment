@@ -3,23 +3,17 @@ variable "resource_pipeline" {
   description = "The production resource locations to deploy"
   type        = map(any)
   default = {
-    deployments = [
+    root = [
+      "tfroot-directory_services"
+    ]
+
+    module = [
       "tfmodule-resource_group"
     ]
 
-    resources = [
+    submodule = [
       "tfsubmodule-network"
     ]
-  }
-}
-
-variable "pipeline_path" {
-  description = "The folder used to store the pipeline within Azure DevOps"
-  type        = map(any)
-  default = {
-    deployments = "\\Modules\\Deployments"
-    resources   = "\\Modules\\Resources"
-
   }
 }
 
@@ -27,7 +21,18 @@ variable "pipeline_service" {
   description = "The pipeline service"
   type        = map(any)
   default = {
-    "tfmodule-resource_group" = "ModuleServices"
+    "tfroot-directory_services" = "DirectoryServices"
+  }
+}
+
+variable "pipeline_path" {
+  description = "The folder used to store the pipeline within Azure DevOps"
+  type        = map(any)
+  default = {
+    root      = "\\Modules\\Root"
+    module    = "\\Modules\\Deployments"
+    submodule = "\\Modules\\Resources"
+
   }
 }
 

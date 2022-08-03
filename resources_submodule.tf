@@ -1,8 +1,8 @@
-resource "azuredevops_build_definition" "deployments" {
-  for_each   = toset(var.resource_pipeline.deployments)
+resource "azuredevops_build_definition" "submodule" {
+  for_each   = toset(var.resource_pipeline.submodule)
   name       = "ENV-${local.service_environment_prefix}; ${each.value}; REF-${var.service_deployment};"
   project_id = local.project_id
-  path       = var.pipeline_path.deployments
+  path       = var.pipeline_path.submodule
 
   repository {
     repo_id               = "${var.repo_id}/${each.value}"
@@ -10,16 +10,6 @@ resource "azuredevops_build_definition" "deployments" {
     yml_path              = var.yml_path
     branch_name           = var.pipeline_branch
     service_connection_id = var.service_connection_id
-  }
-
-  variable {
-    name  = "Service"
-    value = var.pipeline_service[each.value]
-  }
-
-  variable {
-    name  = "Environment"
-    value = terraform.workspace
   }
 
   ci_trigger {
