@@ -1,4 +1,36 @@
 # Variables
+variable "resource_pipeline" {
+  description = "The production resource locations to deploy"
+  type        = map(any)
+  default = {
+    deployments = [
+      "tfmodule-resource_group"
+    ]
+
+    resources = [
+      "tfsubmodule-network"
+    ]
+  }
+}
+
+variable "pipeline_path" {
+  description = "The folder used to store the pipeline within Azure DevOps"
+  type        = map(any)
+  default = {
+    deployments = "\\Modules\\Deployments"
+    resources   = "\\Modules\\Resources"
+
+  }
+}
+
+variable "pipeline_service" {
+  description = "The pipeline service"
+  type        = map(any)
+  default = {
+    "tfmodule-resource_group" = "ModuleServices"
+  }
+}
+
 variable "service_deployment" {
   description = "Desired deployment identifier of the service collection of provisioned resources"
   type        = string
@@ -28,16 +60,3 @@ variable "repo_type" {
   type        = string
   default     = "GitHub"
 }
-
-variable "deployment_module_folder" {
-  description = "The folder used to store the pipeline within Azure DevOps"
-  type        = string
-  default     = "\\Modules\\Deployments"
-}
-
-variable "resources_module_folder" {
-  description = "The folder used to store the pipeline within Azure DevOps"
-  type        = string
-  default     = "\\Modules\\Resources"
-}
-

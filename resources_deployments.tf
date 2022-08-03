@@ -1,10 +1,11 @@
-resource "azuredevops_build_definition" "tfmodule-resource_group" {
-  name       = "ENV-${local.service_environment_prefix}; tfmodule-resource_group; REF-${var.service_deployment};"
+resource "azuredevops_build_definition" "deployments" {
+  for_each   = toset(var.resource_pipeline.deployments)
+  name       = "ENV-${local.service_environment_prefix}; ${each.value}; REF-${var.service_deployment};"
   project_id = local.project_id
-  path       = var.deployment_module_folder
+  path       = var.pipeline_path[deployments]
 
   repository {
-    repo_id               = "wesley-trust/tfmodule-resource_group"
+    repo_id               = "wesley-trust/${each.value}"
     repo_type             = var.repo_type
     yml_path              = var.yml_path
     branch_name           = var.pipeline_branch
@@ -13,7 +14,7 @@ resource "azuredevops_build_definition" "tfmodule-resource_group" {
 
   variable {
     name  = "Service"
-    value = "ModuleServices"
+    value = var.pipeline_service[each.value]
   }
 
   variable {
