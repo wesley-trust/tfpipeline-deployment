@@ -35,3 +35,9 @@ variable "deployment_module_folder" {
   default     = "\\Modules\\Deployments"
 }
 
+variable "resources_module_folder" {
+  description = "The folder used to store the pipeline within Azure DevOps"
+  type        = string
+  default     = "\\Modules\\Resources"
+}
+
