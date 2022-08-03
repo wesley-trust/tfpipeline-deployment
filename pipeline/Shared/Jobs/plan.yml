@@ -13,9 +13,6 @@ jobs:
 
   # Run common steps
   - template: ./Steps/common.yml@tfpipeline-shared
-    env:
-      AZDO_PERSONAL_ACCESS_TOKEN: $(github_pat)
-      AZDO_ORG_SERVICE_URL: $(org_url)
 
   # Run Unit steps
   - template: ./Steps/plan.yml@tfpipeline-shared
