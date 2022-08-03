@@ -60,3 +60,9 @@ variable "repo_type" {
   type        = string
   default     = "GitHub"
 }
+
+variable "repo_id" {
+  description = "The repo id (user account or organisation)"
+  type        = string
+  default     = "wesley-trust"
+}
