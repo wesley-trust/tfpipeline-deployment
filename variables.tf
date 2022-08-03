@@ -1,18 +1,32 @@
 # Variables
 variable "resource_pipeline" {
-  description = "The production resource locations to deploy"
+  description = "The pipelines to deploy"
   type        = map(any)
   default = {
     root = [
-      "tfroot-directory_services"
+      "tfroot-directory_services",
+      "tfroot-edge_services",
+      "tfroot-file_services",
+      "tfroot-management_services"
     ]
 
     module = [
-      "tfmodule-resource_group"
+      "tfmodule-resource_group",
+      "tfmodule-compute",
+      "tfmodule-network_peering",
+      "tfmodule-recovery_services",
+      "tfmodule-static_site",
+      "tfmodule-storage_sync",
+      "tfmodule-traffic_manager"
     ]
 
     submodule = [
-      "tfsubmodule-network"
+      "tfsubmodule-network",
+      "tfsubmodule-disks",
+      "tfsubmodule-key_vault",
+      "tfsubmodule-network_interface",
+      "tfsubmodule-public_load_balancer",
+      "tfsubmodule-virtual_machine"
     ]
   }
 }
@@ -21,7 +35,10 @@ variable "pipeline_service" {
   description = "The pipeline service"
   type        = map(any)
   default = {
-    "tfroot-directory_services" = "DirectoryServices"
+    "tfroot-directory_services"  = "DirectoryServices"
+    "tfroot-edge_services"       = "EdgeServices"
+    "tfroot-file_services"       = "FileServices"
+    "tfroot-management_services" = "ManagementServices"
   }
 }
 
