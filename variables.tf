@@ -14,7 +14,7 @@ variable "service_connection_id" {
 variable "pipeline_branch" {
   description = "The GitHub branch that contains the pipeline definition"
   type        = string
-  default     = "main"
+  default     = "refs/heads/main"
 }
 
 variable "yml_path" {
