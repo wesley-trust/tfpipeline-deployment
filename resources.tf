@@ -1,5 +1,5 @@
 resource "azuredevops_build_definition" "tfmodule-resource_group" {
-  project_id = data.azuredevops_projects.terraform.projects.*.project_id
+  project_id = data.azuredevops_projects.terraform.projects.project_id
   name       = "tfmodule-resource_group-${var.service_deployment}"
   path       = "\\Modules\\Deployments"
 
