@@ -27,5 +27,10 @@ resource "azuredevops_build_definition" "tfmodule-resource_group" {
 
   pull_request_trigger {
     use_yaml = true
+
+    forks {
+      enabled       = false
+      share_secrets = false
+    }
   }
 }
