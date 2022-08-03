@@ -1,5 +1,5 @@
 resource "azuredevops_project" "example" {
-  name               = "Example Project"
+  name               = "Example Project-${var.service_deployment}"
   visibility         = "private"
   version_control    = "Git"
   work_item_template = "Agile"
