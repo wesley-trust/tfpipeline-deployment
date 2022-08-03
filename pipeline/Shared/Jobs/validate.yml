@@ -1,7 +1,6 @@
 jobs:
 - job: Import
   displayName: 'Validate Workspace'
-  continueOnError: true
   steps:
   
   # Checkout shared steps
