@@ -1,70 +1,17 @@
-resource "azuredevops_project" "example" {
-  name               = "Example Project-${var.service_deployment}"
-  visibility         = "private"
-  version_control    = "Git"
-  work_item_template = "Agile"
-}
-
-resource "azuredevops_git_repository" "example" {
-  project_id = azuredevops_project.example.id
-  name       = "Example Repository"
-  initialization {
-    init_type = "Clean"
-  }
-}
-
-resource "azuredevops_variable_group" "example" {
-  project_id   = azuredevops_project.example.id
-  name         = "Example Pipeline Variables"
-  description  = "Managed by Terraform"
-  allow_access = true
-
-  variable {
-    name  = "FOO"
-    value = "BAR"
-  }
-}
-
-resource "azuredevops_build_definition" "example" {
-  project_id = azuredevops_project.example.id
-  name       = "Example Build Definition"
-  path       = "\\ExampleFolder"
+resource "azuredevops_build_definition" "tfmodule-resource_group" {
+  project_id = azuredevops_projects.terraform.project_id
+  name       = "tfmodule-resource_group-${var.service_deployment}"
+  path       = "\\Modules\\Deployments"
 
   ci_trigger {
     use_yaml = true
   }
 
-  schedules {
-    branch_filter {
-      include = ["master"]
-      exclude = ["test", "regression"]
-    }
-    days_to_build              = ["Wed", "Sun"]
-    schedule_only_with_changes = true
-    start_hours                = 10
-    start_minutes              = 59
-    time_zone                  = "(UTC) Coordinated Universal Time"
-  }
-
   repository {
-    repo_type   = "TfsGit"
-    repo_id     = azuredevops_git_repository.example.id
-    branch_name = azuredevops_git_repository.example.default_branch
-    yml_path    = "azure-pipelines.yml"
-  }
-
-  variable_groups = [
-    azuredevops_variable_group.example.id
-  ]
-
-  variable {
-    name  = "PipelineVariable"
-    value = "Go Microsoft!"
-  }
-
-  variable {
-    name         = "PipelineSecret"
-    secret_value = "ZGV2cw"
-    is_secret    = true
+    repo_type             = "GitHub"
+    repo_id               = "wesley-trust/tfmodule-resource_group"
+    branch_name           = "main"
+    yml_path              = "Pipeline/azure-pipelines.yml"
+    service_connection_id = "33f222d9-67c3-4645-a96b-157a5f29b41e"
   }
 }
