@@ -2,7 +2,7 @@ resource "azuredevops_build_definition" "root" {
   for_each   = toset(var.resource_pipeline.root)
   name       = "ENV-${local.service_environment_prefix}; ${each.value}; REF-${var.service_deployment};"
   project_id = local.project_id
-  path       = var.pipeline_path.root
+  path       = "\\${var.pipeline_service[each.value]}"
 
   repository {
     repo_id               = "${var.repo_id}/${each.value}"

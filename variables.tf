@@ -29,10 +29,8 @@ variable "pipeline_path" {
   description = "The folder used to store the pipeline within Azure DevOps"
   type        = map(any)
   default = {
-    root      = "\\Modules\\Root"
     module    = "\\Modules\\Deployments"
     submodule = "\\Modules\\Resources"
-
   }
 }
 
@@ -57,7 +55,7 @@ variable "pipeline_branch" {
 variable "yml_path" {
   description = "The path to the YAML definition in the GitHub repo"
   type        = string
-  default     = "Pipeline/azure-pipelines.yml"
+  default     = "pipeline/azure-pipelines.yml"
 }
 
 variable "repo_type" {
