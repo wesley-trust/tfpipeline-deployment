@@ -1,6 +1,6 @@
 resource "azuredevops_build_definition" "tfmodule-resource_group" {
   project_id = one(data.azuredevops_projects.terraform.projects[*].project_id)
-  name       = "ENV-${local.service_environment}; tfmodule-resource_group REF-${var.service_deployment}"
+  name       = "ENV-${local.service_environment_prefix}; tfmodule-resource_group; REF-${var.service_deployment}"
   path       = var.deployment_module_folder
 
   repository {

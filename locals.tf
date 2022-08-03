@@ -1,4 +1,5 @@
 # Calculate local variables
 locals {
-    service_environment = terraform.workspace
+  # Service functions and concatenations
+  service_environment_prefix = substr(terraform.workspace, 0, 1)
 }
