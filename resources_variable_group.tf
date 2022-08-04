@@ -1,6 +1,6 @@
 resource "azuredevops_variable_group" "terraform-global" {
   project_id   = local.project_id
-  name         = "terraform-global-01"
+  name         = "terraform-global"
   description  = "Managed by Terraform"
   allow_access = true
 
@@ -12,7 +12,7 @@ resource "azuredevops_variable_group" "terraform-global" {
 
 resource "azuredevops_variable_group" "terraform-system" {
   project_id   = local.project_id
-  name         = "terraform-system-01"
+  name         = "terraform-system"
   description  = "Managed by Terraform"
   allow_access = true
 
