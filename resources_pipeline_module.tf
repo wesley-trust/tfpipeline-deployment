@@ -1,6 +1,6 @@
 resource "azuredevops_build_definition" "module" {
   for_each   = toset(var.resource_pipeline.module)
-  name       = "ENV-${local.service_environment_prefix}; ${each.value}; REF-${var.service_deployment};"
+  name       = "ENV-${local.service_environment_prefix};${var.service_deployment}; ${each.value}"
   project_id = local.project_id
   path       = var.pipeline_path.module
 
