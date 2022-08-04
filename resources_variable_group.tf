@@ -1,6 +1,6 @@
 resource "azuredevops_variable_group" "terraform-backend" {
   project_id   = local.project_id
-  name         = "terraform-backend-01"
+  name         = "terraform-backend"
   description  = "Managed by Terraform"
   allow_access = true
 
