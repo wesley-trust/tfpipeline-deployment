@@ -17,7 +17,7 @@ variable "resource_pipeline" {
       "tfmodule-recovery_services",
       "tfmodule-static_site",
       "tfmodule-storage_sync",
-      "tfmodule-traffic_manager"
+      #"tfmodule-traffic_manager"
     ]
 
     submodule = [
