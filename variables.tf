@@ -63,6 +63,12 @@ variable "service_connection_id" {
   default     = "33f222d9-67c3-4645-a96b-157a5f29b41e"
 }
 
+variable "pipeline_project" {
+  description = "Azure DevOps Project name used for the collection of Pipelines"
+  type        = string
+  default     = "Terraform"
+}
+
 variable "pipeline_branch" {
   description = "The GitHub branch that contains the pipeline definition"
   type        = string

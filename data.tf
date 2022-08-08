@@ -1,3 +1,3 @@
 data "azuredevops_projects" "terraform" {
-  name  = "Terraform"
+  name = var.pipeline_project
 }
