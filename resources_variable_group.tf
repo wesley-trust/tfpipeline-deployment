@@ -50,6 +50,6 @@ resource "azuredevops_variable_group" "terraform-system" {
 
   variable {
     name  = "terraformVersion"
-    value = "1.0.4"
+    value = "1.2.6"
   }
 }
