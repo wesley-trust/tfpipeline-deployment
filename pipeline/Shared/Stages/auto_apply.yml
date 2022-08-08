@@ -7,4 +7,4 @@ stages:
   jobs:
 
   # Apply Jobs
-  - template: ../Jobs/apply.yml
+  - template: ../Jobs/auto_apply.yml
