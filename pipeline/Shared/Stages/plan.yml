@@ -15,5 +15,5 @@ stages:
   # Plan Jobs
   - template: ../Jobs/plan.yml
 
-  # Plan Authorisation Job
-  - template: ../Jobs/plan_auth.yml
+  # Plan Evaluation Job
+  - template: ../Jobs/evaluate.yml
