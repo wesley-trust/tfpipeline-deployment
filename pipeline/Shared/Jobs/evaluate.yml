@@ -11,5 +11,8 @@ jobs:
     displayName: 'Checkout Shared Pipeline Steps'
     path: 's/pipeline/Shared/'
 
+  # Run common steps
+  - template: ./Steps/common.yml@tfpipeline-shared
+
   # Run Plan Evaluation
   - template: ./Steps/evaluate.yml@tfpipeline-shared
