@@ -1,8 +1,8 @@
 jobs:
-- job: Plan
+- job: Evaluate
   displayName: 'Create Plan'
-  dependsOn: New
-  condition: or(eq(dependencies.Import.result,'Succeeded'), eq(dependencies.New.result,'Succeeded'))
+  dependsOn: Plan
+  condition: eq(dependencies.Plan.result,'Succeeded')
   continueOnError: false
   steps:
   
@@ -15,4 +15,4 @@ jobs:
   - template: ./Steps/common.yml@tfpipeline-shared
 
   # Run Unit steps
-  - template: ./Steps/plan.yml@tfpipeline-shared
+  - template: ./Steps/plan_auth.yml@tfpipeline-shared
