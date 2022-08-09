@@ -54,7 +54,7 @@ resource "azuredevops_variable_group" "terraform-system" {
   }
 }
 
-resource "azuredevops_variable_group" "test" {
+/* resource "azuredevops_variable_group" "test" {
   project_id   = local.project_id
   name         = "test"
   description  = "Managed by Terraform"
@@ -64,4 +64,4 @@ resource "azuredevops_variable_group" "test" {
     name  = "test"
     value = "1.2.6"
   }
-}
+} */
