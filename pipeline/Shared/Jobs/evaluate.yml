@@ -1,6 +1,6 @@
 jobs:
 - job: Evaluate
-  displayName: 'Create Plan'
+  displayName: 'Evaluate Plan'
   dependsOn: Plan
   condition: eq(dependencies.Plan.result,'Succeeded')
   continueOnError: false
@@ -15,4 +15,4 @@ jobs:
   - template: ./Steps/common.yml@tfpipeline-shared
 
   # Run Unit steps
-  - template: ./Steps/plan_auth.yml@tfpipeline-shared
+  - template: ./Steps/evaluate.yml@tfpipeline-shared
