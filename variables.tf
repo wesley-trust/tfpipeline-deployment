@@ -24,7 +24,7 @@ variable "resource_pipeline" {
       "tfsubmodule-network",
       "tfsubmodule-disks",
       "tfsubmodule-key_vault",
-      "tfsubmodule-network_interface",
+      "tfsubmodule-network_interfaces",
       "tfsubmodule-public_load_balancer",
       "tfsubmodule-virtual_machine"
     ]
