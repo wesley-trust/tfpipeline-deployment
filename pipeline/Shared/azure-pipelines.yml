@@ -28,11 +28,14 @@ stages:
 # Auto Apply
 - template: Stages/auto_apply.yml
 
-# Manual Apply
+# Apply
 - template: Stages/apply.yml
 
 # RePlan
-#- template: Stages/replan.yml
+- template: Stages/replan.yml
+
+# AutoReApply
+- template: Stages/auto_reapply.yml
 
 # ReApply
-#- template: Stages/reapply.yml
+- template: Stages/reapply.yml
