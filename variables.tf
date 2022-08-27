@@ -7,7 +7,8 @@ variable "resource_pipeline" {
       "tfroot-directory_services",
       "tfroot-edge_services",
       "tfroot-file_services",
-      "tfroot-management_services"
+      "tfroot-management_services",
+      "tfrepo-deployment"
     ]
 
     module = [
@@ -39,6 +40,7 @@ variable "pipeline_service" {
     "tfroot-edge_services"       = "EdgeServices"
     "tfroot-file_services"       = "FileServices"
     "tfroot-management_services" = "ManagementServices"
+    "tfrepo-deployment"          = "DeploymentServices"
   }
 }
 
