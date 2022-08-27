@@ -40,7 +40,7 @@ variable "pipeline_service" {
     "tfroot-edge_services"       = "EdgeServices"
     "tfroot-file_services"       = "FileServices"
     "tfroot-management_services" = "ManagementServices"
-    "tfrepo-deployment"          = "DeploymentServices"
+    "tfrepo-deployment"          = "RepositoryServices"
   }
 }
 
