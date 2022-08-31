@@ -4,6 +4,7 @@ variable "resource_pipeline" {
   type        = map(any)
   default = {
     root = [
+      "pkr-directory_service",
       "tfroot-directory_services",
       "tfroot-edge_services",
       "tfroot-file_services",
