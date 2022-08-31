@@ -4,7 +4,7 @@ variable "resource_pipeline" {
   type        = map(any)
   default = {
     root = [
-      "pkr-directory_service",
+      "pkr-directory_services",
       "tfroot-directory_services",
       "tfroot-edge_services",
       "tfroot-file_services",
@@ -37,7 +37,7 @@ variable "pipeline_service" {
   description = "The pipeline service"
   type        = map(any)
   default = {
-    "pkr-directory_service"      = "DirectoryServices"
+    "pkr-directory_services"      = "DirectoryServices"
     "tfroot-directory_services"  = "DirectoryServices"
     "tfroot-edge_services"       = "EdgeServices"
     "tfroot-file_services"       = "FileServices"
