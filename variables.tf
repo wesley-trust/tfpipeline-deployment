@@ -28,7 +28,8 @@ variable "resource_pipeline" {
       "tfsubmodule-key_vault",
       "tfsubmodule-network_interfaces",
       "tfsubmodule-public_load_balancer",
-      "tfsubmodule-virtual_machine"
+      "tfsubmodule-virtual_machine",
+      "tfsubmodule-virtual_machine_scale_set"
     ]
   }
 }
