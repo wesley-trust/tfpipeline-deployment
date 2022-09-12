@@ -54,14 +54,22 @@ resource "azuredevops_variable_group" "terraform-system" {
   }
 }
 
-/* resource "azuredevops_variable_group" "test" {
+resource "azuredevops_variable_group" "packer-runnerimages" {
   project_id   = local.project_id
-  name         = "test"
+  name         = "packer-runnerimages"
   description  = "Managed by Terraform"
   allow_access = true
 
   variable {
-    name  = "test"
-    value = "1.2.6"
+    name  = "ImageLocation"
+    value = "UK South"
   }
-} */
+  variable {
+    name  = "ImageType-Linux"
+    value = "Ubuntu2204"
+  }
+  variable {
+    name  = "ImageType-Windows"
+    value = "Windows2022"
+  }
+}
