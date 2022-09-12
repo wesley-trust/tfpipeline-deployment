@@ -65,11 +65,11 @@ resource "azuredevops_variable_group" "packer-runnerimages" {
     value = "UK South"
   }
   variable {
-    name  = "ImageType-Linux"
+    name  = "ImageType_Linux"
     value = "Ubuntu2204"
   }
   variable {
-    name  = "ImageType-Windows"
+    name  = "ImageType_Windows"
     value = "Windows2022"
   }
 }
