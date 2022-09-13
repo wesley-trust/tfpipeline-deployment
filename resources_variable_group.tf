@@ -66,7 +66,7 @@ resource "azuredevops_variable_group" "packer-runnerimages" {
   }
   variable {
     name  = "ImageType_Linux"
-    value = "Ubuntu2204"
+    value = "Ubuntu2004"
   }
   variable {
     name  = "ImageType_Windows"
