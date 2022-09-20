@@ -72,4 +72,12 @@ resource "azuredevops_variable_group" "packer-runnerimages" {
     name  = "ImageType_Windows"
     value = "Windows2022"
   }
+  variable {
+    name  = "ImageResourceGroupName_Linux"
+    value = "Image-Lin-agent_services-Prod-UKS-01-rg"
+  }
+  variable {
+    name  = "ImageResourceGroupName_Windows"
+    value = "Image-Win-agent_services-Prod-UKS-01-rg"
+  }
 }
