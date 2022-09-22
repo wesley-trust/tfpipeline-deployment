@@ -11,7 +11,8 @@ variable "resource_pipeline" {
       "tfroot-file_services",
       "tfroot-management_services",
       "tfrepo-deployment",
-      "tfpipeline-agent_services"
+      "tfpipeline-agent_services",
+      "tfroot-image-gallery_services"
     ]
 
     module = [
@@ -37,17 +38,18 @@ variable "resource_pipeline" {
 }
 
 variable "pipeline_service" {
-  description = "The pipeline service"
+  description = "The pipeline service (this must contain no spaces and be unique, to prevent Terraform state clash)"
   type        = map(any)
   default = {
-    "pkr-directory_services"     = "Image-DirectoryServices"
-    "pkr-agent_services"         = "Image-AgentServices"
-    "tfroot-directory_services"  = "DirectoryServices"
-    "tfroot-edge_services"       = "EdgeServices"
-    "tfroot-file_services"       = "FileServices"
-    "tfroot-management_services" = "ManagementServices"
-    "tfrepo-deployment"          = "RepositoryServices"
-    "tfpipeline-agent_services"  = "AgentServices"
+    "pkr-directory_services"        = "Image-DirectoryServices"
+    "pkr-agent_services"            = "Image-AgentServices"
+    "tfroot-directory_services"     = "DirectoryServices"
+    "tfroot-edge_services"          = "EdgeServices"
+    "tfroot-file_services"          = "FileServices"
+    "tfroot-management_services"    = "ManagementServices"
+    "tfrepo-deployment"             = "RepositoryServices"
+    "tfpipeline-agent_services"     = "AgentServices"
+    "tfroot-image-gallery_services" = "ImageGalleryServices"
   }
 }
 
