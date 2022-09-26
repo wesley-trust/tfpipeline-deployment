@@ -6,6 +6,7 @@ variable "resource_pipeline" {
     root = [
       "pkr-directory_services",
       "pkr-agent_services",
+      "bicep-image-gallery_services",
       "tfroot-directory_services",
       "tfroot-edge_services",
       "tfroot-file_services",
@@ -43,6 +44,7 @@ variable "pipeline_service" {
   default = {
     "pkr-directory_services"        = "Image-DirectoryServices"
     "pkr-agent_services"            = "Image-AgentServices"
+    "bicep-image-gallery_services"  = "ImageGalleryServices"
     "tfroot-directory_services"     = "DirectoryServices"
     "tfroot-edge_services"          = "EdgeServices"
     "tfroot-file_services"          = "FileServices"

@@ -81,3 +81,19 @@ resource "azuredevops_variable_group" "packer-runnerimages" {
     value = "Image-Win-agent_services-Prod-UKS-01-rg"
   }
 }
+
+resource "azuredevops_variable_group" "bicep-system" {
+  project_id   = local.project_id
+  name         = "bicep-system"
+  description  = "Managed by Terraform"
+  allow_access = true
+
+  variable {
+    name  = "bicep-deployment_location"
+    value = "uksouth"
+  }
+  variable {
+    name  = "bicep-file"
+    value = "./main.bicep"
+  }
+}
