@@ -94,10 +94,10 @@ resource "azuredevops_variable_group" "bicep-system" {
   }
   variable {
     name  = "bicep-resource_group_file"
-    value = "./resource_group.bicep"
+    value = "./resource_group"
   }
   variable {
     name  = "bicep-resources_file"
-    value = "./resources.bicep"
+    value = "./resources"
   }
 }
